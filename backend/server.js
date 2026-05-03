@@ -13,7 +13,7 @@ require("dotenv").config();
 
 mongoose.Promise = global.Promise;
 mongoose
-    .connect("mongodb://127.0.0.1:27017/clothingDB", {
+    .connect(process.env.MONGO_URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
