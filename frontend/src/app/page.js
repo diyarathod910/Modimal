@@ -102,11 +102,11 @@ export default function Home() {
               <div className="flex flex-col gap-3" >
                 <div className="overflow-hidden w-full h-Dfull cursor-pointer ">
                   <div className="relative h-full transition-transform duration-500 hover:scale-105">
-                    {/* <img
+                    <img
                       src={item.image}
-                     
-                    /> */}
-                    <img src={`${BASE_URL}/uploads/${item.image}`} className="w-full h-150 object-cover rounded-md" />
+                      className="w-full h-150 object-cover rounded-md"
+                    />
+                    
 
                     {/* ❤️ Wishlist Icon */}
                     <span
@@ -211,7 +211,7 @@ export default function Home() {
                     {/* Image Card */}
                     <div className="relative h-full">
                       <img
-                        src={`${BASE_URL}/uploads/${item.image}`}
+                        src={item.image}
                         className="w-full h-full object-cover rounded-md"
                       />
 
