@@ -38,7 +38,7 @@ exports.create = async (req, res) => {
         UserSchema.token = token;
         console.log("scheama", UserSchema);
 
-        const savedUser = await user.save();
+        const savedUser = await UserSchema.save();
 
         console.log("Saved:", savedUser);
 
