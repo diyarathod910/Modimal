@@ -75,6 +75,13 @@ export default function Home() {
 
   const [showModal, setShowModal] = useState(false);
 
+  const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+
+  console.log(BASE_URL);
+
+
+
+
   return (
     <div className={montserrat.className}>
       <Navbar></Navbar>
@@ -102,11 +109,13 @@ export default function Home() {
               <div className="flex flex-col gap-3" >
                 <div className="overflow-hidden w-full h-Dfull cursor-pointer ">
                   <div className="relative h-full transition-transform duration-500 hover:scale-105">
-                    <img
+                    {/* <img
                       src={item.image}
                       className="w-full h-150 object-cover rounded-md"
-                    />
-                    
+                    /> */}
+                    console.log(${item.image});
+
+                    <img src={`${BASE_URL}${item.image}`} />
 
                     {/* ❤️ Wishlist Icon */}
                     <span
