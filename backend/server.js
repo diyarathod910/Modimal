@@ -5,7 +5,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const path = require("path");
-g
+
 // const cookieValidator = require('./middleware/auth.js')
 
 
