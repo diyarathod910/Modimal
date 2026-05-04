@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-const BASE_URL = "http://localhost:8080";
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 const getToken = () => {
     if (typeof window === "undefined") return null;
@@ -11,7 +11,7 @@ const getToken = () => {
 export default function useWishlist() {
     const [wishlist, setWishlist] = useState([]);
 
-    
+
 
     const fetchWishlist = async () => {
         const token = getToken();
@@ -36,7 +36,7 @@ export default function useWishlist() {
 
         fetchWishlist();
     }, []);
-    
+
 
     const toggleWishlist = async (productId) => {
         const token = getToken();
@@ -58,5 +58,5 @@ export default function useWishlist() {
         return wishlist.some(item => item._id.toString() === id.toString());
     };
 
-    return { wishlist, toggleWishlist, isInWishlist,setWishlist,fetchWishlist };
+    return { wishlist, toggleWishlist, isInWishlist, setWishlist, fetchWishlist };
 }

@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8080/cart";
+const BASE_URL = `${process.env.NEXT_PUBLIC_API_URL}/cart`;
 
 const getToken = () => localStorage.getItem("token");
 
