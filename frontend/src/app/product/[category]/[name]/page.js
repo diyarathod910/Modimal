@@ -7,7 +7,7 @@ export default async function ProductDetail({ params }) {
 
     console.log(category, name);
 
-    const res = await fetch(`http://localhost:8080/products/${category}/${name}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products/${category}/${name}`, {
         cache: "no-store"
     });
     const product = await res.json();

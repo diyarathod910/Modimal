@@ -44,7 +44,7 @@ export default function login() {
 
         try {
             const res = await axios.post(
-                `http://localhost:8080/login`,
+                `${process.env.NEXT_PUBLIC_API_URL}/login`,
                 user
             );
 

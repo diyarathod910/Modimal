@@ -45,14 +45,14 @@ export default function ModiweekPage() {
     useEffect(() => {
         if (!day) return;
 
-        fetch(`http://localhost:8080/products/day/${day.toLowerCase()}`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/products/day/${day.toLowerCase()}`)
             .then(res => res.json())
             .then(data => {
                 console.log("API DATA:", data);
                 setProducts(data.products || []);
             });
 
-        fetch("http://localhost:8080/products")
+        fetch("${process.env.NEXT_PUBLIC_API_URL}/products")
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);

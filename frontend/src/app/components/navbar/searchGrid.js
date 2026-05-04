@@ -24,7 +24,7 @@ export default function SearchGrid({ sizeOptions, filters, addToCart, wishlist,
                 setLoading(true);
 
                 const res = await fetch(
-                    `http://localhost:8080/products/search?q=${query}`
+                    `${process.env.NEXT_PUBLIC_API_URL}/products/search?q=${query}`
                 );
 
                 const data = await res.json();

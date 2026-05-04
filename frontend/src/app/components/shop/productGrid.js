@@ -11,7 +11,7 @@ export default function ProductGrid({ sizeOptions, filters, addToCart, wishlist,
     const [visibleCount, setVisibleCount] = useState(6);
 
     useEffect(() => {
-        fetch("http://localhost:8080/products")
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/products`)
             .then((res) => res.json())
             .then((data) => {
                 console.log("API DATA:", data);

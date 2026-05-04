@@ -46,7 +46,7 @@ export default function register() {
 
     const handleOnSubmit = () => {
         setUsers([...users, user]);
-        axios.post("http://localhost:8080/add-user", user)
+        axios.post("${process.env.NEXT_PUBLIC_API_URL}/add-user", user)
             .then((data) => console.log(data.data))
             .catch((e) => console.log(e))
 
