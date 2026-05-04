@@ -49,7 +49,7 @@ export default function Home() {
 
     if (id) {
       axios
-        .get(`${process.env.NEXT_PUBLIC_API_URL}/ user/${id}`)
+        .get(`${process.env.NEXT_PUBLIC_API_URL}/user/${id}`)
         .then((res) => {
           setUser(res.data.data);
         })
