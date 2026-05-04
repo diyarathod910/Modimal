@@ -37,16 +37,17 @@ export default function login() {
         });
     };
     console.log(user);
+
     const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+
     console.log(BASE_URL);
-    
 
     const handleLogin = async (e) => {
         e.preventDefault();
 
         try {
             const res = await axios.post(
-                `${BASE_URL}/login`,user
+                `${BASE_URL}/login`, user
             );
 
             // save token

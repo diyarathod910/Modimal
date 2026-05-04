@@ -42,7 +42,9 @@ export default function register() {
     console.log(user);
     console.log(users);
 
+
     const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+
     console.log(BASE_URL);
 
 
