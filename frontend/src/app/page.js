@@ -38,7 +38,8 @@ export default function Home() {
 
 
   useEffect(() => {
-    fetch("http://localhost:8080/products")
+    // fetch("http://localhost:8080/products")
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/products`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -48,7 +49,7 @@ export default function Home() {
 
     if (id) {
       axios
-        .get(`http://localhost:8080/user/${id}`)
+        .get(`${ process.env.NEXT_PUBLIC_API_URL } / user / ${ id }`)
         .then((res) => {
           setUser(res.data.data);
         })
@@ -204,7 +205,7 @@ export default function Home() {
             {week_fits.map((item, i) => (
               <SwiperSlide key={i}>
 
-                <Link href={`/modiweek/${days[i % 7]}`}>
+                <Link href={`/ modiweek / ${ days[i % 7]}`}>
                   <div className="h-[90%]">
                     {/* Image Card */}
                     <div className="relative h-full">
