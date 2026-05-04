@@ -38,13 +38,11 @@ exports.create = async (req, res) => {
         UserSchema.token = token;
         console.log("scheama", UserSchema);
 
-        await UserSchema.save();
-        UserSchema.save().then((data) => {
+        const savedUser = await user.save();
 
-            // res.status(201).json(data);
+        console.log("Saved:", savedUser);
 
-            res.send(data);
-        });
+        res.status(201).json(savedUser);
     }
     catch (err) {
         console.log(err);
