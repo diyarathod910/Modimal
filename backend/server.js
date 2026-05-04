@@ -5,6 +5,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const path = require("path");
+import { fileURLToPath } from "url";
 // const cookieValidator = require('./middleware/auth.js')
 
 
@@ -44,6 +45,9 @@ async function validateCookies(req, res, next) {
 }
 
 // app.use("/uploads", express.static("uploads"));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.use(bodyParser.json());
