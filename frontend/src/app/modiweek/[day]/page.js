@@ -54,7 +54,7 @@ export default function ModiweekPage() {
                 setProducts(data.products || []);
             });
 
-        fetch("${process.env.NEXT_PUBLIC_API_URL}/products")
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/products`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
