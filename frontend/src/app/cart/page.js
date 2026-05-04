@@ -14,6 +14,8 @@ const montserrat = Montserrat({
 
 export default function CartPage() {
 
+    const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+
     const router = useRouter();
     const { cart, updateQty, removeItem, total } = useCartLogic();
 
@@ -55,7 +57,7 @@ export default function CartPage() {
                                 {/* PRODUCT */}
                                 <div className="col-span-2 flex gap-4 items-start">
                                     <img
-                                        src={item.productId?.image}
+                                        src={`${BASE_URL}${item.productId.image}`}
                                         className="w-20 h-24 object-cover"
                                     />
 

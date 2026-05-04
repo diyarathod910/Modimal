@@ -1,6 +1,8 @@
 "use client";
 
 export default function CartSummary({ cart, total, updateQty, removeItem }) {
+
+    const BASE_URL = process.env.NEXT_PUBLIC_API_URL
     return (
         <div className="w-full  p-5">
             <h2 className="text-[20px] font-bold mb-4 text-center">Your Cart</h2>
@@ -11,7 +13,7 @@ export default function CartSummary({ cart, total, updateQty, removeItem }) {
                 return (
                     <div key={i} className="flex gap-4 justify-between mb-5">
                         <img
-                            src={item.productId.image}
+                            src={`${BASE_URL}${item.productId.image}`}
                             className="w-25 h-35 object-cover"
                         />
 

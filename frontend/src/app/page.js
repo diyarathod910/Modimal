@@ -113,9 +113,8 @@ export default function Home() {
                       src={item.image}
                       className="w-full h-150 object-cover rounded-md"
                     /> */}
-                    console.log(${item.image});
 
-                    <img src={`${BASE_URL}${item.image}`} />
+                    <img  src={`${BASE_URL}${item.image}`}className="w-full h-150 object-cover rounded-md" />
 
                     {/* ❤️ Wishlist Icon */}
                     <span
@@ -220,7 +219,7 @@ export default function Home() {
                     {/* Image Card */}
                     <div className="relative h-full">
                       <img
-                        src={item.image}
+                        src={`${BASE_URL}${item.image}`}
                         className="w-full h-full object-cover rounded-md"
                       />
 

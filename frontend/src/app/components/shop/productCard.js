@@ -3,6 +3,8 @@ import { IoHeartOutline, IoHeart } from "react-icons/io5";
 
 export default function ProductCard({ item, toggleWishlist,
     isInWishlist }) {
+
+    const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
     const slug = item.name.toLowerCase().replaceAll(" ", "-");
     const isLiked = isInWishlist(item._id);
     const handleWishlist = () => {
@@ -17,7 +19,7 @@ export default function ProductCard({ item, toggleWishlist,
                     {/* Image */}
                     <div className="relative">
                         <img
-                            src={item.image}
+                            src={`${BASE_URL}${item.image}`}
                             className="w-full h-145 object-cover"
                         />
 

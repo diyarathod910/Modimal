@@ -22,7 +22,7 @@ const montserrat = Montserrat({
 
 export default function ProductUI({ product }) {
 
-   
+
 
 
     // const cartLogic = useCartLogic();
@@ -30,7 +30,7 @@ export default function ProductUI({ product }) {
 
     console.log(product);
 
-
+    const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
     if (!product) return <div>Loading...</div>;
     return (
@@ -59,7 +59,7 @@ export default function ProductUI({ product }) {
                     <div className="w-[85%] flex flex-col items-center">
                         <div className="w-full flex justify-between">
                             <div className="w-[49%] flex flex-col">
-                                <ProductImage images={product.image}></ProductImage>
+                                <ProductImage images={`${BASE_URL}${product.image}`}></ProductImage>
                             </div>
                             <div className="w-[49%] flex flex-col">
                                 <ProductInfo productId={product._id}   // 🔥 important fix
@@ -68,7 +68,7 @@ export default function ProductUI({ product }) {
                                     price={product.price}
                                     colors={product.colors}
                                     sizes={product.sizes}
-                                    image={product.image}
+                                    image={`${BASE_URL}${product.image}`}
                                     addToCart={addToCart} ></ProductInfo>
                             </div>
                         </div>

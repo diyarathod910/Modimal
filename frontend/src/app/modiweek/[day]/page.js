@@ -37,6 +37,8 @@ const montserrat = Montserrat({
 
 export default function ModiweekPage() {
 
+    const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+
     const router = useRouter();
     const { day } = useParams(); // ✅ IMPORTANT
 
@@ -67,7 +69,7 @@ export default function ModiweekPage() {
 
     const { toggleWishlist, isInWishlist } = useWishlist();
 
-   
+
 
     const { addToCart } = useCartLogic();
 
@@ -95,7 +97,7 @@ export default function ModiweekPage() {
                         <div className="w-full flex justify-between">
                             <div className="w-[49%] flex flex-col">
                                 {product && (
-                                    <img src={product.image} className="w-full h-130" ></img>
+                                    <img src={`${BASE_URL}${item.image}`} className="w-full h-130" ></img>
                                 )}
 
 
@@ -109,7 +111,7 @@ export default function ModiweekPage() {
                                         price={product.price}
                                         colors={product.colors}
                                         sizes={product.sizes}
-                                        image={product.image}
+                                        image={`${BASE_URL}${product.image}`}
                                         addToCart={addToCart}
                                     />
                                 )}
@@ -140,7 +142,7 @@ export default function ModiweekPage() {
                                             {/* Image Card */}
                                             <div className="relative h-full">
                                                 <img
-                                                    src={item.image}
+                                                    src={`${BASE_URL}${item.image}`}
                                                     className="w-full h-full object-cover rounded-md"
                                                 />
 

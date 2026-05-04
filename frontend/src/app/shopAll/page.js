@@ -23,6 +23,8 @@ const montserrat = Montserrat({
 
 export default function ShopAll() {
 
+    
+
     const sizeOptions = ["s", "m", "l"];
 
     const [filters, setFilters] = useState({

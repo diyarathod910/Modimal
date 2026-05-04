@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import useCartLogic from "@/app/hooks/useCartLogic";
 
 export default function CartDrawer({ isOpen, onClose }) {
+
+    const BASE_URL = process.env.NEXT_PUBLIC_API_URL
     const { cart, updateQty, removeItem, total } = useCartLogic();
 
     const router = useRouter();
@@ -72,7 +74,7 @@ export default function CartDrawer({ isOpen, onClose }) {
                         {cart.map((item, i) => (
                             <div key={i} className="flex gap-3">
                                 <img
-                                    src={item.productId.image}
+                                   src={`${BASE_URL}${item.productId.image}`}
                                     className="w-16 h-20 object-cover"
                                 />
 

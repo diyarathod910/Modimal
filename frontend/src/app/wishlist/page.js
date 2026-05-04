@@ -23,7 +23,7 @@ const montserrat = Montserrat({
 export default function Wishlist() {
 
 
-
+    const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
     const { wishlist, setWishlist, fetchWishlist, toggleWishlist } = useWishlist();
     const handleRemove = async (id) => {
@@ -49,7 +49,7 @@ export default function Wishlist() {
             <div className={montserrat.className}>
 
                 <Navbar></Navbar>
-                
+
                 <section className="w-full flex justify-center mt-[3%]">
                     <div className="w-[85%] flex flex-col  items-center">
                         <h3 className="text-[30px] text-black font-bold">My Wish List</h3>
@@ -77,7 +77,7 @@ export default function Wishlist() {
 
                                             <div className="relative">
                                                 <img
-                                                    src={item.image}
+                                                    src={`${BASE_URL}${item.image}`}
                                                     className="w-full h-120 object-cover"
                                                 />
 
