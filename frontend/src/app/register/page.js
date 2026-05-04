@@ -3,7 +3,7 @@
 import { Montserrat } from "next/font/google";
 
 
-import { IoHeartOutline,IoSearch } from "react-icons/io5";
+import { IoHeartOutline, IoSearch } from "react-icons/io5";
 import { FiUser } from "react-icons/fi";
 import { MdOutlineShoppingBag } from "react-icons/md";
 
@@ -42,11 +42,13 @@ export default function register() {
     console.log(user);
     console.log(users);
 
+    const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+    console.log(BASE_URL);
 
 
     const handleOnSubmit = () => {
         setUsers([...users, user]);
-        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/add-user`, user)
+        axios.post(`${BASE_URL}/add-user`, user)
             .then((data) => console.log(data.data))
             .catch((e) => console.log(e))
 
