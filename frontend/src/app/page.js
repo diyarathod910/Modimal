@@ -214,7 +214,7 @@ export default function Home() {
             {week_fits.map((item, i) => (
               <SwiperSlide key={i}>
 
-                <Link href={`/ modiweek / ${days[i % 7]}`}>
+                <Link href={`/modiweek/${days[i % 7]}`}>
                   <div className="h-[90%]">
                     {/* Image Card */}
                     <div className="relative h-full">
