@@ -97,7 +97,7 @@ export default function ModiweekPage() {
                         <div className="w-full flex justify-between">
                             <div className="w-[49%] flex flex-col">
                                 {product && (
-                                    <img src={`${BASE_URL}${item.image}`} className="w-full h-130" ></img>
+                                    <img src={`${BASE_URL}${product.image}`} className="w-full h-130" ></img>
                                 )}
 
 

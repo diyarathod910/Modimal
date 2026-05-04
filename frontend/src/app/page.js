@@ -219,7 +219,7 @@ export default function Home() {
                     {/* Image Card */}
                     <div className="relative h-full">
                       <img
-                        src={`${BASE_URL}${item.image}`}
+                        src={`${BASE_URL}${item.image}`}x
                         className="w-full h-full object-cover rounded-md"
                       />
 
