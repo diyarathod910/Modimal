@@ -3,6 +3,8 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
+
+const path = require("path");
 // const cookieValidator = require('./middleware/auth.js')
 
 
@@ -41,7 +43,8 @@ async function validateCookies(req, res, next) {
     next()
 }
 
-app.use("/uploads", express.static("uploads"));
+// app.use("/uploads", express.static("uploads"));
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.use(bodyParser.json());
 app.use(cors());
